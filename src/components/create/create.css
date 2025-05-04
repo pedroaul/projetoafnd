@@ -35,3 +35,13 @@
     align-items: center;
     border-radius: 10px;
 }
+
+.btTr {
+    font-size: 28px;
+}
+
+.bt:hover {
+    color: #6d6d6d;
+    transition: .2s;
+    cursor: pointer;
+}

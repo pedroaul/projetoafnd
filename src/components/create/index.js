@@ -16,7 +16,7 @@ function Create() {
                 <div className='bt'><a >{<FaEraser />}</a></div>
                 <div className='bt'><a >{<MdEditSquare />}</a></div>
                 <div className='bt'><a >{<IoIosSave />}</a></div>
-                <div className='bt'><a >{<FaTrashAlt />}</a></div>
+                <div className='bt'><a className='btTr'>{<FaTrashAlt />}</a></div>
             </div>
         </div>
     );
