@@ -1,8 +1,8 @@
 # This is a universitary project for the college Uninove, where it will allow the user to create his own AFD representation.
 
-# The whole project was made in React js. 
+ The whole project was made in React js. 
 
-# Now let's get started with Create React App
+ Now let's get started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
