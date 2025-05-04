@@ -1,0 +1,39 @@
+
+.flexClass {
+    display: flex;
+}
+
+.color-top {
+    height: 45px;
+    background-color: #F2CD00;
+}
+
+.color-left {
+    width: 116px;
+    height: 1119px;
+    background-color: #F2CD00;
+    display: flex;
+}
+
+.classBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutSub {
+    font-size: 65px;
+    text-align: center;
+    padding: 73px 500px;
+}
+
+span {
+    color: #F2CD00;
+}
+
+.aboutP {
+    font-size: 30px;
+    padding: 15px 80px;
+    
+}

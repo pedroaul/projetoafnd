@@ -1,0 +1,37 @@
+.container {
+    box-shadow: 0 0 5px 1px #F2CD00;
+    padding-bottom: 40px;
+}
+
+.workTxt {
+    padding: 87px 77px;
+    padding-bottom: 18px;
+}
+
+.workP {
+    font-size: 30px;
+    padding: 0 76px;
+}
+
+.workArea {
+    display: flex;
+    width: 1802px;
+    height: 1021px;
+    background-color: #FFFFFF;
+    margin: 40px 59px;
+    border-radius: 20px;
+}
+
+.bt {
+    display: flex;
+    width: 65px;
+    height: 61px;
+    margin-top: 37px;
+    margin-left: 45px;
+    font-size: 32px;
+    padding-top: 12px;
+    background-color: #F9F9F9;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
