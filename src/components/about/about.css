@@ -5,13 +5,13 @@
 
 .color-top {
     height: 45px;
-    background-color: #F2CD00;
+    background-color: #F3CA40;
 }
 
 .color-left {
     width: 116px;
     height: 1119px;
-    background-color: #F2CD00;
+    background-color: #F3CA40;
     display: flex;
 }
 
@@ -26,14 +26,16 @@
     font-size: 65px;
     text-align: center;
     padding: 73px 500px;
+    color: #FFFF;
 }
 
 span {
-    color: #F2CD00;
+    color: #F3CA40;
 }
 
 .aboutP {
     font-size: 30px;
     padding: 15px 80px;
+    color: #FFFF;
     
 }

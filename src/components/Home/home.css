@@ -7,7 +7,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    box-shadow: 0 0 5px 1px #F2CD00;
+    box-shadow: 0 0 5px 1px #F3CA40;
     padding-top: 67px;
     padding-bottom: 97px;
 }
@@ -15,7 +15,7 @@
 .mainTitle {
     font-weight: 900;
     font-size: 70px;
-    color: #F2CD00;
+    color: #F3CA40;
     padding: 60px 126px;
     margin-top: 102px;
 }
@@ -27,6 +27,7 @@
     margin: 0 74px;
     justify-content: center;
     align-items: center;
+    color: #FFFF;
 }
 
 h2 {
@@ -38,7 +39,7 @@ h2 {
     margin: 14px 0;
     padding: 20px 0;
     border-radius: 10px;
-    box-shadow: 2px 6px 10px #F2CD00;
+    box-shadow: 2px 6px 10px #F3CA40;
 }
 
 .sub1 {
@@ -66,8 +67,8 @@ h2 {
 }
 
 .colorSec {
-    background-color: #FBF0C2;
-    box-shadow: 0 0 5px 1px #F2CD00;
+    background-color: #F3CA40;
+    box-shadow: 0 0 5px 1px #F3CA40;
 }
 
 .thirdSub {

@@ -1,25 +1,32 @@
 .container {
-    box-shadow: 0 0 5px 1px #F2CD00;
+    box-shadow: 0 0 5px 1px #F3CA40;
     padding-bottom: 40px;
 }
 
 .workTxt {
     padding: 87px 77px;
     padding-bottom: 18px;
+    color: #FFFF;
 }
 
 .workP {
     font-size: 30px;
     padding: 0 76px;
+    color: #FFFF;
 }
 
 .workArea {
     display: flex;
+    flex-direction: column;
     width: 1802px;
     height: 1021px;
-    background-color: #FFFFFF;
+    background-color: #FFF;
     margin: 40px 59px;
     border-radius: 20px;
+}
+
+.toolbar {
+    display: flex;
 }
 
 .bt {
@@ -29,19 +36,19 @@
     margin-top: 37px;
     margin-left: 45px;
     font-size: 32px;
-    padding-top: 12px;
+    padding-top: 5px;
     background-color: #F9F9F9;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
 }
 
-.btTr {
+#btTr {
     font-size: 28px;
 }
 
 .bt:hover {
-    color: #6d6d6d;
+    color: #F3CA40;
     transition: .2s;
     cursor: pointer;
 }
