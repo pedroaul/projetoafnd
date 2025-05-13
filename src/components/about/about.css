@@ -1,32 +1,30 @@
 
-.flexClass {
+.main {
     display: flex;
+    justify-content: center;
+    padding-top: 85px;
+    padding-bottom: 65px;
+    border-bottom: 2px solid #F3CA40;
 }
 
-.color-top {
-    height: 45px;
-    background-color: #F3CA40;
-}
-
-.color-left {
-    width: 116px;
-    height: 1119px;
-    background-color: #F3CA40;
-    display: flex;
-}
-
-.classBlock {
-    width: 100%;
+.aboutTxt {
     display: flex;
     flex-direction: column;
+    width: 1600px;
+    height: 733px;
+    background-color: #323C4F;
+    padding: 0 165px;
+    border-radius: 20px;
     align-items: center;
 }
 
 .aboutSub {
     font-size: 65px;
-    text-align: center;
-    padding: 73px 500px;
     color: #FFFF;
+    text-align: center;
+    width: 1237px;
+    padding-bottom: 45px;
+    padding-top: 39px;
 }
 
 span {
@@ -35,7 +33,6 @@ span {
 
 .aboutP {
     font-size: 30px;
-    padding: 15px 80px;
     color: #FFFF;
     
 }
