@@ -1,0 +1,26 @@
+.imgMain {
+    text-align: center;
+}
+
+.imgTxt {
+    color: #FFF;
+    font-size: 35px;
+    padding: 71px 0;
+}
+
+.imSec {
+    display: flex;
+    height: 733px;
+    background-color: #323C4F;
+    border-top: 2px solid #F3CA40;
+    border-bottom: 2px solid #F3CA40;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.imgTest {
+    width: 790px;
+    height: 567px;
+    background-color: #FFF;
+}

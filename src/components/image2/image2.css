@@ -1,0 +1,25 @@
+.siMain {
+    border-bottom: 2px solid #F3CA40;
+    padding-bottom: 124px;
+}
+
+.siFlex {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    justify-content: center;
+}
+
+.siTxt {
+    color: #FFF;
+    font-size: 30px;
+    padding-top: 106px;
+    padding-bottom: 69px;
+    text-align: center;
+}
+
+.siTest {
+    width: 508px;
+    height: 679px;
+    background-color: #FFF;
+}
