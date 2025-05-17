@@ -32,7 +32,6 @@ function Create() {
             const target = opt.target;
 
             console.log("Mouse event:", evt);
-            console.log("Target: ", target);
 
         if (!isLineMode && !target ) {
         isDrawing.current = true;
@@ -128,7 +127,7 @@ function Create() {
                 <div>
                     {modalVisible && (
                         <Modal
-                            onClose={() => setModalVisible(false)}
+                            
                         />
                     )}
                 </div>
