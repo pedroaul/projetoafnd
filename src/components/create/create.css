@@ -19,6 +19,7 @@
 .workArea {
     display: flex;
     flex-direction: column;
+    position: relative;
     height: 1021px;
     margin: 40px 59px;
     border-radius: 20px;
@@ -27,8 +28,9 @@
 
 canvas {
     position: relative;
-    top: -100px;
     border-radius: 20px;
+    top: -100px;
+    overflow: hidden;
 }
 
 .toolbar {
