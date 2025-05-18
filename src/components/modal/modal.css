@@ -1,11 +1,21 @@
 .modal {
     display: flex;
-    width: 200px;
-    height: 100px;
-    background-color: red;
+    flex-direction: column;
+    width: 150px;
+    height: 85px;
+    background-color: #e6e6e6;
     border-radius: 8px;
-    padding: 10px;
-    color: white;
     z-index: 8888;
-    position: absolute;
+    justify-content: center;
+}
+
+.modalBt {
+    cursor: default;
+    width: 100%;
+    padding: 5px 5px;
+}
+
+.modalBt:hover {
+    background-color: #c4c4c4;
+    transition: .2s;
 }

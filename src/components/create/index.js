@@ -16,9 +16,12 @@ function Create() {
     const startCoords = useRef({ x: 0, y: 0 }); // Pontos de início coordenadas
     const circleCountRef = useRef(0); // Contagem de círculos
     const[modalVisible, setModalVisible] = useState(false);
+    const [modalPosition, setModalPosition] = useState({x: 0, y: 0});
     
 
     useEffect(() => {
+        
+        
         if(canvasRef.current) {
             const initCanvas = new Canvas(canvasRef.current, {
                 width: 1802,
@@ -75,8 +78,7 @@ function Create() {
                 
                 if (target && target.type === 'circle') {
                     setModalVisible(true);
-
-                    console.log('Clique com o direito');
+                    setModalPosition({x: e.clientX, y: e.clientY - 35});
                 } else {
                     setModalVisible(false);
                 }
@@ -88,6 +90,20 @@ function Create() {
 
         }
     }, []);
+
+    useEffect(() => {
+        function HandleClickOutside(e) {
+            setModalVisible(false);
+        }
+
+        if(modalVisible) {
+            document.addEventListener('mousedown', HandleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', HandleClickOutside);
+        }
+    }, [modalVisible])
 
     const addCircle = () => {
         if(canvas) {
@@ -124,15 +140,19 @@ function Create() {
                     <div className='bt'  id='bt_save'>{<IoIosSave />}</div>
                     <div className='bt' id='btTr'>{<FaTrashAlt />}</div>
                 </div>
-                <div>
-                    {modalVisible && (
-                        <Modal
-                            
-                        />
-                    )}
-                </div>
                 <canvas ref={canvasRef}></canvas>
             </div>
+             {modalVisible && (
+                        <div
+                            style={{
+                            top: modalPosition.y,
+                            left: modalPosition.x,
+                            position: 'absolute',
+                        }}
+                        >
+                            <Modal />
+                        </div>
+                    )}
         </div>
     );
 }

@@ -4,7 +4,8 @@ import './modal.css';
 function Modal() {
     return(
         <div className='modal'>
-            MODAL
+            <a className='modalBt'>Renomear</a>
+            <a className='modalBt'>Conectar Estado</a>
         </div>
     );
 }
