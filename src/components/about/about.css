@@ -7,24 +7,29 @@
     border-bottom: 2px solid #F3CA40;
 }
 
+.interface {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 .aboutTxt {
     display: flex;
     flex-direction: column;
     width: 1600px;
-    height: 733px;
     background-color: #323C4F;
-    padding: 0 165px;
+    padding: 115px;
     border-radius: 20px;
     align-items: center;
+    justify-content: center;
+    
 }
 
 .aboutSub {
     font-size: 65px;
     color: #FFFF;
     text-align: center;
-    width: 1237px;
-    padding-bottom: 45px;
-    padding-top: 39px;
+    width: 65vw;
+    padding-bottom: 69px;
 }
 
 span {

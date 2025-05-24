@@ -1,6 +1,8 @@
  .homeSec {
     display: flex;
     flex-direction: column;
+    padding: 0 6px;
+    border-bottom: 2px solid #F3CA40;
 }
 
 .mainTitle {
@@ -28,12 +30,10 @@
     align-items: center;
     padding-top: 15px;
     padding-bottom: 84px;
-    border-bottom: 2px solid #F3CA40;
 }
 
 .prevSize {
     width: 27vw;
-    text-align: center;
     padding-top: 70px;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .prevEx {
-    width: 1600px;
+    width: 82vw;
     height: 645px;
     background-color: #FFFF;
     border-radius: 20px;

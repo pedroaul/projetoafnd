@@ -8,13 +8,13 @@ import SImage from "./components/image2";
 function App() {
   return (
     <div>
-      <Header />
-      <Home />
-      <FImage />
-      <SImage />
-      <About />
-      <Create />
-    </div>
+        <Header />
+        <Home />
+        <FImage />
+        <SImage />
+        <About />
+        <Create />
+      </div>
   );
 }
 

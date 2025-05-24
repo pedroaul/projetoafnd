@@ -8,19 +8,25 @@
     padding: 71px 0;
 }
 
-.imSec {
-    display: flex;
+.colorSec {
     height: 733px;
     background-color: #323C4F;
     border-top: 2px solid #F3CA40;
     border-bottom: 2px solid #F3CA40;
+    
+    
+}
+
+.imgSec {
+    display: flex;
+    gap: 20px;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    height: 733px;
 }
 
 .imgTest {
-    width: 790px;
+    width: 37vw;
     height: 567px;
     background-color: #FFF;
 }
