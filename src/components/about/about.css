@@ -41,3 +41,21 @@ span {
     color: #FFFF;
     
 }
+
+@media screen and (max-width: 1250px) {
+
+.aboutSub {
+    font-size: 40px;
+}
+
+.aboutTxt {
+    width: 85vw;
+    background-color: #323C4F;
+    padding: 45px;
+}
+
+.aboutP {
+    font-size: 20px;   
+}
+
+}

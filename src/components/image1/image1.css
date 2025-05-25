@@ -30,3 +30,22 @@
     height: 567px;
     background-color: #FFF;
 }
+
+@media screen and (max-width: 1250px) {
+
+.colorSec {
+    height: 600px;
+}
+
+.imgSec {
+    height: 600px;
+    
+}
+
+.imgTest {
+    width: 420px;
+    height: 420px;
+    background-color: #FFF;
+}
+
+}

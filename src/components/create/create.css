@@ -75,3 +75,12 @@ canvas {
     transition: .2s;
     cursor: pointer;
 }
+
+@media screen and (max-width: 1250px) {
+
+    .workArea {
+    width: fit-content;
+    margin: 0;
+}
+
+}
