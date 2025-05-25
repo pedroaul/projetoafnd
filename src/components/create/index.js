@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import { Canvas, Circle, Group, Line, Path, Text, Triangle } from "fabric";
 import { LiaPlusCircleSolid } from "react-icons/lia";
 import Modal from "../modal";
+import { FaArrowRotateRight } from "react-icons/fa6";
+import { LuRotateCcw } from "react-icons/lu";
 
 function Create() {
   const [isLineMode] = useState(false); // Estado modo linha
@@ -213,7 +215,7 @@ function Create() {
             {<LiaPlusCircleSolid />}
           </div>
           <div className="bt" id="loop" onClick={addLoopToSelected}>
-            {<LiaPlusCircleSolid />}
+            {<LuRotateCcw />}
           </div>
           <div className="bt" id="remove" onClick={remove}>
             {<MdClear />}

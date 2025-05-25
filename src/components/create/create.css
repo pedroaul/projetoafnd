@@ -22,7 +22,7 @@
     flex-direction: column;
     position: relative;
     height: 1021px;
-    margin: 40px 59px;
+    margin: 81px 59px;
     border-radius: 20px;
     align-items: center;
 }
@@ -78,9 +78,30 @@ canvas {
 
 @media screen and (max-width: 1250px) {
 
-    .workArea {
-    width: fit-content;
+.workArea {
     margin: 0;
+    padding: 81px 4%;
+}
+
+.workTxt {
+    font-size: 35px;
+    text-align: center;
+}
+
+.workP {
+    font-size: 25px;
+    text-align: center;
+}
+
+.toolbar {
+    justify-content: center;
+    gap: 6vw;
+}
+
+.bt {
+    margin-left: 0;
+    width: 12vw;
+    height: 8vh;
 }
 
 }
