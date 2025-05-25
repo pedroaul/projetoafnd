@@ -74,15 +74,18 @@ function Create() {
       });
       initCanvas.upperCanvasEl.addEventListener("contextmenu", (e) => {
         e.preventDefault();
-
+        
         const pointer = initCanvas.getPointer(e);
         const target = initCanvas.findTarget(e, false);
 
-        if (target && target.type === "circle") {
-          setModalVisible(true);
-          setModalPosition({ x: e.clientX, y: e.clientY });
+        if (target && target.type === "group") {
+            initCanvas.setActiveObject(target);
+            setModalVisible(true);
+            setModalPosition({ x: e.clientX, y: e.clientY });
+            
         } else {
           setModalVisible(false);
+          
         }
       });
 
@@ -99,6 +102,7 @@ function Create() {
 
     if (modalVisible) {
       document.addEventListener("mousedown", HandleClickOutside);
+      
     }
 
     return () => {
@@ -109,15 +113,10 @@ function Create() {
   const addLoopToState = (stateGroup) => {
     const center = stateGroup.getCenterPoint();
 
-    const offset = 60;
-    const width = 50;
-
     const loopPath = new Path(
-      `M ${center.x - 40} ${center.y - 60} C ${center.x - 40} ${
+      `M ${center.x - 24} ${center.y - 45} C ${center.x - 40} ${
         center.y - 145
-      }, ${center.x + 20} ${center.y - 145}, ${center.x + 20}  ${
-        center.y - 70
-      }`,
+      }, ${center.x + 40} ${center.y - 145}, ${center.x + 25}  ${center.y - 50}`,
       {
         stroke: "black",
         fill: "",
@@ -128,8 +127,8 @@ function Create() {
     );
 
     const arrow = new Triangle({
-      left: center.x + 27,
-      top: center.y - 58,
+      left: center.x + 33,
+      top: center.y - 43,
       angle: 180,
       width: 15,
       height: 15,
@@ -137,8 +136,17 @@ function Create() {
       selectable: false,
       evented: false,
     });
-    canvas.add(loopPath);
-    canvas.add(arrow);
+
+    const groupAll = new Group([...stateGroup._objects, loopPath, arrow], {
+        left: stateGroup.left,
+        top: stateGroup.top,
+        hasBorders: false,
+        hasControls: true,
+        evented: true,
+    })
+
+    canvas.add(groupAll);
+    canvas.setActiveObject(groupAll);
     canvas.renderAll();
   };
 
@@ -178,6 +186,7 @@ function Create() {
 
   const addLoopToSelected = () => {
     const selected = canvas.getActiveObject();
+    console.log("Objeto selecionado:", selected);
     if (selected && selected.type === "group") {
       addLoopToState(selected);
     }
@@ -228,7 +237,7 @@ function Create() {
             position: "absolute",
           }}
         >
-          <Modal />
+          <Modal onAddLoop={addLoopToSelected} />
         </div>
       )}
     </div>
