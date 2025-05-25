@@ -16,12 +16,15 @@ function Create() {
     const startCoords = useRef({ x: 0, y: 0 }); // Pontos de início coordenadas
     const circleCountRef = useRef(0); // Contagem de círculos
     const[modalVisible, setModalVisible] = useState(false);
-    const [modalPosition, setModalPosition] = useState({x: 0, y: 0});
-    
+    const [modalPosition, setModalPosition] = useState({x: 0, y: 0}); 
+    const saveImageToLocal = (event) => {
+        let link = event.currentTarget;
+        link.setAttribute('download', 'canvas.png');
+        let image = canvasRef.current.toDataURL('image/png');
+        link.setAttribute('href', image);
+    }
 
     useEffect(() => {
-        
-        
         if(canvasRef.current) {
             const initCanvas = new Canvas(canvasRef.current, {
                 width: 1802,
@@ -30,7 +33,9 @@ function Create() {
             initCanvas.backgroundColor = '#FFF';
             initCanvas.renderAll();
 
-        initCanvas.on('mouse:down', (opt) => {
+            setCanvas(initCanvas);
+
+            initCanvas.on('mouse:down', (opt) => {
             const evt = opt.e;
             const target = opt.target;
 
@@ -67,9 +72,6 @@ function Create() {
             lineRef.current = null;
         }
       });
-
-            setCanvas(initCanvas);
-
             initCanvas.upperCanvasEl.addEventListener('contextmenu', (e) => {
                 e.preventDefault();
                 
@@ -78,7 +80,7 @@ function Create() {
                 
                 if (target && target.type === 'circle') {
                     setModalVisible(true);
-                    setModalPosition({x: e.clientX, y: e.clientY - 35});
+                    setModalPosition({x: e.clientX, y: e.clientY });
                 } else {
                     setModalVisible(false);
                 }
@@ -118,6 +120,7 @@ function Create() {
                 stroke: "#00000",
                 evented: true,
             });
+            
             canvas.add(circle);
             circleCountRef.current += 1;
         }
@@ -137,7 +140,7 @@ function Create() {
                 <div className='toolbar'>
                     <div className='bt' id='circle' onClick={addCircle}>{<LiaPlusCircleSolid />}</div>
                     <div className='bt' id='remove' onClick={remove}>{<MdClear/>}</div>
-                    <div className='bt'  id='bt_save'>{<IoIosSave />}</div>
+                    <div className='bt'><a id='bt_save' href="downloadImage" onClick={saveImageToLocal}>{<IoIosSave />}</a></div>
                     <div className='bt' id='btTr'>{<FaTrashAlt />}</div>
                 </div>
                 <canvas ref={canvasRef}></canvas>

@@ -7,9 +7,18 @@ function Header() {
     return(
         <header>
             <div className='headerMain'>
-                <a className='btMenu'><IoIosHome className='icons'/>Inicio</a>
-                <a className='btMenu'>{<GiOpenBook className='icons'/>}Sobre</a>
-                <a className='btMenu'>{<RiFileEditLine className='icons'/>}Crie o seu</a>
+                <div className='btn'>
+                    <IoIosHome className='icons'/>
+                    <a className='btMenu'>Inicio</a>
+                </div>
+                <div className='btn'>
+                    {<GiOpenBook className='icons'/>}
+                    <a className='btMenu'>Sobre</a>
+                </div>
+                <div className='btn'>
+                    {<RiFileEditLine className='icons'/>}
+                    <a className='btMenu'>Crie o seu</a>
+                </div>
             </div>
         </header>
     );

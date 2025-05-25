@@ -14,18 +14,16 @@ header > .headerMain {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
     top: 0;
-    z-index: 9999;
 }
 
 .btMenu {
     font-size: 33px;
     cursor: pointer;
-    padding: 0 40px;
+    padding: 0 10px;
 }
 
-.btMenu:hover {
+.btn:hover {
     transform: scale(1.05);
     transition: .3s;
     color: #FFFF;
@@ -35,25 +33,31 @@ header > .headerMain {
     height: 38px;
     width: 38px;
     position: relative;
-    top: 4px;
-    left: -5px;
+    top: 5px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1250px) {
-  header {
+  header > .headerMain {
     display: flex;
-    gap: 10px;
     align-items: center;
+    padding: 0 4%;
   }
 
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
   .btMenu {
-    font-size: 2vmax;
+    font-size: 3vmax;
   }
 
   .icons {
     width: 30px;
     position: relative;
-    top: 10px;
     
   }
 }

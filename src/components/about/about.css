@@ -15,7 +15,7 @@
 .aboutTxt {
     display: flex;
     flex-direction: column;
-    width: 1600px;
+    width: 95vw;
     background-color: #323C4F;
     padding: 115px;
     border-radius: 20px;

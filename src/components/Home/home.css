@@ -1,9 +1,10 @@
  .homeSec {
     display: flex;
     flex-direction: column;
-    padding: 0 6px;
     border-bottom: 2px solid #F3CA40;
 }
+
+
 
 .mainTitle {
     font-weight: 900;
@@ -40,6 +41,7 @@
 .prevSub {
     color: #FFFF;
     font-size: 50px;
+    
 }
 
 .prevEx {
@@ -49,4 +51,24 @@
     border-radius: 20px;
 }
 
+@media screen and (max-width: 1250px) {
 
+.interface {
+    padding: 0 2%;
+}
+
+.mainTitle {
+    font-size: 50px;
+}
+
+.homeP {
+    font-size: 20px;
+}
+
+.prevEx {
+    border-radius: 0;
+    width: 1250px;
+    height: 425px;
+}
+
+}

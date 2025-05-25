@@ -4,8 +4,10 @@ function Home() {
     return(
         <section className='homeSec'>
                 <div className='txt'>
-                        <h1 className='mainTitle'>CRIE O SEU <br/> PRÓPRIO AUTÔMATO!</h1>
-                        <p className='homeP'>Aqui você poderá criar seus autômatos de maneira simples e prática que irão te <br/> salvar quando precisar entregar aquele trabalho caprichado e fácil de compreender. </p>
+                        <div className='interface'>
+                            <h1 className='mainTitle'>CRIE O SEU <br/> PRÓPRIO AUTÔMATO!</h1>
+                            <p className='homeP'>Aqui você poderá criar seus autômatos de maneira simples e prática que irão te <br/> salvar quando precisar entregar aquele trabalho caprichado e fácil de compreender. </p>
+                        </div>
                     </div>
                 <div className='interface'>
                     <div className='prevSize'>

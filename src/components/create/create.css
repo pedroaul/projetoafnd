@@ -63,3 +63,15 @@ canvas {
     transition: .2s;
     cursor: pointer;
 }
+
+#bt_save {
+    display: flex;
+    color: #000;
+    align-items: center;
+}
+
+#bt_save:hover {
+    color: #F3CA40;
+    transition: .2s;
+    cursor: pointer;
+}

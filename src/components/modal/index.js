@@ -1,11 +1,11 @@
 import React from 'react';
 import './modal.css';
 
-function Modal() {
+function Modal({ onConnect }) {
     return(
         <div className='modal'>
             <a className='modalBt'>Renomear</a>
-            <a className='modalBt'>Conectar Estado</a>
+            <a className='modalBt' onClick={onConnect}>Conectar Estado</a>
         </div>
     );
 }
