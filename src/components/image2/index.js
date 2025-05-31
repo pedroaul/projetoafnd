@@ -8,7 +8,7 @@ function SImage() {
                 <div className='siFlex'>
                     <div className="siTest"><img id='ext' src='.\images\337940-removebg-preview.png'/></ div>
                     <div className="siTest"><img id='ext' src='.\images\337948-removebg-preview.png'/></ div>
-                    <div className="siTest"><img id='pdf' src='.\images\pngtree-pdf-file-icon-png-png-image_4899509-removebg-preview.png'/></ div>
+                    <div className="siTest"><img id='ext' src='.\images\337946-removebg-preview.png'/></ div>
                 </div>
             </div>
         </div>

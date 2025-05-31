@@ -33,11 +33,6 @@
     height: 170px;
 }
 
-#pdf {
-    width: 222px;
-    height: 222px;
-}
-
 @media screen and (max-width: 1250px) {
 
 .siFlex {
@@ -55,9 +50,6 @@
     height: 85px;
 }
 
-#pdf {
-    width: 100px;
-    height: 100px;
-}
+
 
 }
