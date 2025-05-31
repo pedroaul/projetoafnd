@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from "react";
 import { Canvas, Circle, Group, Line, Path, Text, Triangle } from "fabric";
 import { LiaPlusCircleSolid } from "react-icons/lia";
 import Modal from "../modal";
-import { FaArrowRotateRight } from "react-icons/fa6";
 import { LuRotateCcw } from "react-icons/lu";
 
 function Create() {
@@ -19,12 +18,62 @@ function Create() {
   const circleCountRef = useRef(0); // Contagem de círculos
   const [modalVisible, setModalVisible] = useState(false);
   const [modalPosition, setModalPosition] = useState({ x: 0, y: 0 });
-  const saveImageToLocal = (event) => {
-    let link = event.currentTarget;
-    link.setAttribute("download", "canvas.png");
-    let image = canvasRef.current.toDataURL("image/png");
-    link.setAttribute("href", image);
-  };
+  const saveImageToLocal = async () => {
+  if (!canvas) return;
+
+  try {
+    // Gera a imagem em formato PNG inicialmente
+    const dataURL = canvas.toDataURL({
+      format: 'png',
+      quality: 1,
+    });
+
+    const blob = await (await fetch(dataURL)).blob();
+
+    const fileHandle = await window.showSaveFilePicker({
+      suggestedName: 'meu-automato',
+      types: [
+        {
+          description: 'Imagens',
+          accept: {
+            'image/png': ['.png'],
+            'image/jpeg': ['.jpg', '.jpeg'],
+            'application/pdf': ['.pdf'],
+          },
+        },
+      ],
+    });
+
+    const writableStream = await fileHandle.createWritable();
+
+    const ext = fileHandle.name.split('.').pop();
+    if (ext === 'jpg' || ext === 'jpeg') {
+      const jpegDataURL = canvas.toDataURL({ format: 'jpeg', quality: 1 });
+      const jpegBlob = await (await fetch(jpegDataURL)).blob();
+      await writableStream.write(jpegBlob);
+    } else if (ext === 'pdf') {
+      const canvasEl = canvasRef.current;
+      const pdf = new window.jspdf.jsPDF();
+      pdf.addImage(canvasEl.toDataURL('image/png'), 'PNG', 10, 10, 180, 100);
+      const pdfBlob = pdf.output('blob');
+      await writableStream.write(pdfBlob);
+    } else {
+      await writableStream.write(blob); // default PNG
+    }
+
+    await writableStream.close();
+  } catch (error) {
+    // Ignora o cancelamento (AbortError)
+    if (error.name !== 'AbortError') {
+      console.error('Erro ao salvar o arquivo:', error);
+    }
+  }
+};
+
+
+  const [selectedGroup, setSelectedGroup] = useState(null);
+
+  
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -79,6 +128,14 @@ function Create() {
         
         const pointer = initCanvas.getPointer(e);
         const target = initCanvas.findTarget(e, false);
+
+        if (target && target.type === "group") {
+            initCanvas.setActiveObject(target);
+            setSelectedGroup(target); // ← salva o objeto atual
+            setModalVisible(true);
+            setModalPosition({ x: e.clientX, y: e.clientY });
+        }
+
 
         if (target && target.type === "group") {
             initCanvas.setActiveObject(target);
@@ -194,6 +251,49 @@ function Create() {
     }
   };
 
+  const renameState = () => {
+  const selected = canvas.getActiveObject();
+  if (selected && selected.type === "group") {
+    const textObject = selected._objects.find(obj => obj.type === "text");
+    if (!textObject) return;
+
+    const center = selected.getCenterPoint();
+    const input = document.createElement("input");
+    input.type = "text";
+    input.value = textObject.text;
+    input.style.position = "absolute";
+    input.style.left = `${canvas._offset.left + center.x - 50}px`;
+    input.style.top = `${canvas._offset.top + center.y - 10}px`;
+    input.style.width = "100px";
+    input.style.fontSize = "16px";
+    input.style.zIndex = "1000";
+    input.style.textAlign = "center";
+
+    document.body.appendChild(input);
+    input.focus();
+
+    input.onblur = () => {
+      textObject.set({ text: input.value });
+      canvas.renderAll();
+      document.body.removeChild(input);
+    };
+
+    input.onkeydown = (e) => {
+      if (e.key === "Enter") {
+        input.blur(); // dispara o blur que salva e remove o input
+      }
+    };
+  }
+};
+
+const clearCanvas = () => {
+  if (canvas) {
+    canvas.clear();
+    canvas.backgroundColor = "#FFF"; // mantém o fundo branco
+    canvas.renderAll();
+  }
+};
+
   const remove = () => {
     if (canvas) {
       canvas.remove(canvas.getActiveObject());
@@ -221,11 +321,11 @@ function Create() {
             {<MdClear />}
           </div>
           <div className="bt">
-            <a id="bt_save" href="downloadImage" onClick={saveImageToLocal}>
+            <a id="bt_save"  onClick={saveImageToLocal}>
               {<IoIosSave />}
             </a>
           </div>
-          <div className="bt" id="btTr">
+          <div className="bt" id="btTr" onClick={clearCanvas}>
             {<FaTrashAlt />}
           </div>
         </div>
@@ -239,7 +339,9 @@ function Create() {
             position: "absolute",
           }}
         >
-          <Modal onAddLoop={addLoopToSelected} />
+          <Modal 
+            onAddLoop={addLoopToSelected} 
+            onRenameState={renameState}/>
         </div>
       )}
     </div>
