@@ -26,9 +26,11 @@
 }
 
 .imgTest {
+    display: flex;
     width: 37vw;
     height: 567px;
     background-color: #FFF;
+    align-items: center;
 }
 
 @media screen and (max-width: 1250px) {

@@ -2,7 +2,7 @@ import './home.css';
 
 function Home() {
     return(
-        <section className='homeSec'>
+        <section className='homeSec' id='home'>
                 <div className='txt'>
                         <div className='interface'>
                             <h1 className='mainTitle'>CRIE O SEU <br/> PRÓPRIO AUTÔMATO!</h1>
@@ -14,7 +14,12 @@ function Home() {
                         <h2 className='prevSub'>Preview</h2>
                     </div>
                     <div className='preview'>
-                        <div className='prevEx'/>
+                        <video src='/video/preview.mp4'
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                        ></video>
                     </div>
                 </div>
         </section>

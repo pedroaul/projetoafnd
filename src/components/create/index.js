@@ -22,7 +22,6 @@ function Create() {
   if (!canvas) return;
 
   try {
-    // Gera a imagem em formato PNG inicialmente
     const dataURL = canvas.toDataURL({
       format: 'png',
       quality: 1,
@@ -63,17 +62,13 @@ function Create() {
 
     await writableStream.close();
   } catch (error) {
-    // Ignora o cancelamento (AbortError)
     if (error.name !== 'AbortError') {
       console.error('Erro ao salvar o arquivo:', error);
     }
   }
 };
 
-
   const [selectedGroup, setSelectedGroup] = useState(null);
-
-  
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -119,7 +114,7 @@ function Create() {
         if (!isDrawing.current) return;
         isDrawing.current = false;
         if (lineRef.current) {
-          lineRef.current.set({ selectable: true, evented: true }); // torna a linha selecionável
+          lineRef.current.set({ selectable: true, evented: true }); 
           lineRef.current = null;
         }
       });
@@ -131,7 +126,7 @@ function Create() {
 
         if (target && target.type === "group") {
             initCanvas.setActiveObject(target);
-            setSelectedGroup(target); // ← salva o objeto atual
+            setSelectedGroup(target); 
             setModalVisible(true);
             setModalPosition({ x: e.clientX, y: e.clientY });
         }
@@ -280,7 +275,7 @@ function Create() {
 
     input.onkeydown = (e) => {
       if (e.key === "Enter") {
-        input.blur(); // dispara o blur que salva e remove o input
+        input.blur(); 
       }
     };
   }
@@ -289,19 +284,28 @@ function Create() {
 const clearCanvas = () => {
   if (canvas) {
     canvas.clear();
-    canvas.backgroundColor = "#FFF"; // mantém o fundo branco
+    canvas.backgroundColor = "#FFF"; 
     canvas.renderAll();
+    circleCountRef.current = 0;
   }
 };
 
   const remove = () => {
     if (canvas) {
+      const activeObj = canvas.getActiveObject();
       canvas.remove(canvas.getActiveObject());
+      if (activeObj && activeObj.type === "group") {
+      const hasCircle = activeObj._objects.some(obj => obj.type === "circle");
+      if (hasCircle) {
+        circleCountRef.current = Math.max(0, circleCountRef.current - 1);
+      }
+    }
+    canvas.remove(activeObj);
     }
   };
 
   return (
-    <div className="container">
+    <div className="container" id="criar">
       <div className="workArea">
         <h1 className="workTxt">
           AGORA CRIE AQUI O SEU <span className="workSpan">AUTÔMATO</span>!

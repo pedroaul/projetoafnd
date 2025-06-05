@@ -2,7 +2,7 @@ import './about.css';
 
 function About() {
     return(
-        <div className='main'>
+        <div className='main' id='sobre'>
                 <div className='interface'>
                     <div className='aboutTxt'>
                         <h1 className='aboutSub'>Bora entender um pouco sobre <span>Autômatos</span>?</h1>

@@ -7,8 +7,8 @@ function FImage() {
             <div className="colorSec">
             <div className='interface'>
                     <div className='imgSec'>
-                        <div className="imgTest"/>
-                        <div className="imgTest"/>
+                        <div className="imgTest"><img className='example' src='./images/img1.png'></img></div>
+                        <div className="imgTest"><img className='example' src='./images/img2.png'></img></div>
                     </div>
                 </div>
             </div>

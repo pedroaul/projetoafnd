@@ -17,6 +17,17 @@ header > .headerMain {
     top: 0;
 }
 
+.btn a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+    transform: scale(1.05);
+    transition: .3s;
+    color: #FFFF;
+}
+
 .btMenu {
     font-size: 33px;
     cursor: pointer;

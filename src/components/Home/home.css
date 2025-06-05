@@ -44,12 +44,16 @@
     
 }
 
-.prevEx {
+video {
+    border-radius: 20px;
+}
+
+/* .prevEx {
     width: 82vw;
     height: 645px;
     background-color: #FFFF;
     border-radius: 20px;
-}
+} */
 
 @media screen and (max-width: 1250px) {
 

@@ -9,15 +9,15 @@ function Header() {
             <div className='headerMain'>
                 <div className='btn'>
                     <IoIosHome className='icons'/>
-                    <a className='btMenu'>Inicio</a>
+                    <a className='btMenu' href='#home'>Inicio</a>
                 </div>
                 <div className='btn'>
                     {<GiOpenBook className='icons'/>}
-                    <a className='btMenu'>Sobre</a>
+                    <a className='btMenu' href='#sobre'>Sobre</a>
                 </div>
-                <div className='btn'>
+                <div className='btn' >
                     {<RiFileEditLine className='icons'/>}
-                    <a className='btMenu'>Crie o seu</a>
+                    <a className='btMenu' href='#criar'>Crie o seu</a>
                 </div>
             </div>
         </header>
